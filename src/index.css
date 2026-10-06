@@ -29,7 +29,7 @@
   }
 }
 
-/* Custom glow and backdrop effects inspired by premium design (e.g. Qazuor) */
+/* Custom glow and backdrop effects inspired by Qazuor design */
 .glass-panel {
   background: rgba(15, 17, 26, 0.7);
   backdrop-filter: blur(16px);
@@ -68,14 +68,190 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* Subtle animations */
-@keyframes pulseGlow {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(1.05); }
+/* ========================================================================= */
+/* PREMIUM KEYFRAME ANIMATIONS FOR LANDING PAGE & HERO                       */
+/* ========================================================================= */
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.animate-pulse-glow {
-  animation: pulseGlow 6s infinite ease-in-out;
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes floatGlow {
+  0%, 100% {
+    opacity: 0.35;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: translate(-48%, -52%) scale(1.06);
+  }
+}
+
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes scrollIndicator {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+}
+
+/* Utility Animation Classes */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float-glow {
+  animation: floatGlow 14s ease-in-out infinite;
+}
+
+.animate-gentle-float {
+  animation: gentleFloat 6s ease-in-out infinite;
+}
+
+.animate-scroll-indicator {
+  animation: scrollIndicator 2s ease-in-out infinite;
+}
+
+/* Animation Delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-150 { animation-delay: 150ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+
+/* ========================================================================= */
+/* INTRO & HERO CURSOR EFFECT KEYFRAMES                                     */
+/* ========================================================================= */
+
+@keyframes introFadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes introTitle {
+  0% {
+    opacity: 0;
+    transform: scale(0.94) translateY(12px);
+    letter-spacing: 0.28em;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    letter-spacing: 0.18em;
+  }
+}
+
+@keyframes introFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes introPulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+}
+
+@keyframes introGlowExpand {
+  0% {
+    opacity: 0.2;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(1.3);
+  }
+  100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+@keyframes introProgress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-intro-fade-down {
+  animation: introFadeDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-intro-title {
+  animation: introTitle 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-intro-fade-up {
+  animation: introFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-intro-pulse {
+  animation: introPulse 3s ease-in-out infinite;
+}
+
+.animate-intro-glow-expand {
+  animation: introGlowExpand 2.8s ease-in-out forwards;
+}
+
+.animate-intro-progress {
+  animation: introProgress 2.2s ease-out forwards;
 }
 
 /* Reduced motion accessibility */
@@ -87,3 +263,4 @@
     scroll-behavior: auto !important;
   }
 }
+

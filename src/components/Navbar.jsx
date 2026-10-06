@@ -53,9 +53,9 @@ export default function Navbar() {
           {/* Logo */}
           <a
             href="#hero"
-            className="flex items-center gap-2.5 group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-lg p-1"
+            className="flex items-center gap-2.5 group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-lg p-1 animate-fade-in-up"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform duration-300">
               KS
             </div>
             <div className="flex flex-col">
@@ -69,18 +69,19 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Nav Items */}
-          <nav className="hidden lg:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-slate-800/80 backdrop-blur-sm">
-            {navItems.map((item) => {
+          <nav className="hidden lg:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-slate-800/80 backdrop-blur-sm animate-fade-in-up delay-100">
+            {navItems.map((item, index) => {
               const sectionId = item.href.substring(1);
               const isActive = activeSection === sectionId;
               return (
                 <a
                   key={item.label}
                   href={item.href}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
+                  style={{ animationDelay: `${120 + index * 40}ms` }}
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 animate-fade-in-up ${
                     isActive
-                      ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30 font-semibold'
-                      : 'text-slate-300 hover:text-white hover:bg-slate-800/50'
+                      ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30 font-semibold scale-[1.03]'
+                      : 'text-slate-300 hover:text-white hover:bg-slate-800/50 hover:scale-105'
                   }`}
                 >
                   {item.label}
@@ -90,13 +91,13 @@ export default function Navbar() {
           </nav>
 
           {/* Action CTAs */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-3 animate-fade-in-up delay-300">
             <a
               href="/Khushi_Shukla_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               download="Khushi_Shukla_Resume.pdf"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700/90 text-slate-100 border border-slate-700/60 text-xs font-semibold transition-all hover:border-indigo-500/50 shadow-sm hover:shadow-indigo-500/10 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700/90 text-slate-100 border border-slate-700/60 text-xs font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:border-indigo-500/50 shadow-sm hover:shadow-indigo-500/20 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
               <FileText className="w-3.5 h-3.5 text-indigo-400" />
               <span>Resume</span>

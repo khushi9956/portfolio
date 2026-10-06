@@ -1,4 +1,5 @@
 import React from 'react';
+import LandingIntro from './components/LandingIntro';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -17,6 +18,7 @@ import Footer from './components/Footer';
 export default function App() {
   return (
     <div className="min-h-screen bg-[#090a0f] text-slate-100 flex flex-col selection:bg-indigo-500/30 selection:text-indigo-200">
+      <LandingIntro />
       <Navbar />
       <main className="flex-grow">
         <Hero />
