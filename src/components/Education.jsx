@@ -13,7 +13,7 @@ const educationList = [
   {
     degree: '12th Grade (Intermediate)',
     status: 'UP Board',
-    institution: 'Dr. Virendra Swarup Education Centre',
+    institution: "Kumari Udyan Girls' Inter College",
     period: '2023 – 2024',
     description: 'Completed senior secondary education under UP Board with focus on academic excellence.',
     highlight: 'Senior Secondary',
@@ -21,7 +21,7 @@ const educationList = [
   {
     degree: '10th Grade (High School)',
     status: 'UP Board',
-    institution: 'Dr. Virendra Swarup Education Centre',
+    institution: "Kumari Udyan Girls' Inter College",
     period: '2021 – 2022',
     description: 'Completed secondary education under UP Board laying strong foundational skills in mathematics and science.',
     highlight: 'High School',
